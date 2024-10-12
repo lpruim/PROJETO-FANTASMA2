@@ -58,11 +58,14 @@ resultado1 <- banco1 %>%
   summarise(total_medalhistas = n()) %>%   
   arrange(desc(total_medalhistas)) %>%    
   head(5)                                 
-
+resultado1$Team <- gsub("Germany", "Alemanha", resultado1$Team)
+resultado1$Team <- gsub("United States", "Estados Unidos", resultado1$Team)
 
 
 
 ggplot(resultado1, aes(x = reorder(Team, -total_medalhistas), y = total_medalhistas)) +
   geom_bar(stat = "identity", fill = "#A11D21") +
-  labs(x = "País", y = "Número de Medalhistas") +
+  labs(x = "Países", y = "Número de Medalhistas") +
   theme_estat()
+ggsave("grafico1.pdf", width = 158, height = 93, units = "mm")
+
