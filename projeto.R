@@ -67,5 +67,5 @@ ggplot(resultado1, aes(x = reorder(Team, -total_medalhistas), y = total_medalhis
   geom_bar(stat = "identity", fill = "#A11D21") +
   labs(x = "Países", y = "Número de Medalhistas") +
   theme_estat()
-ggsave("grafico1.pdf", width = 158, height = 93, units = "mm")
+ggsave("grafico1.jpg", width = 158, height = 93, units = "mm")
 
