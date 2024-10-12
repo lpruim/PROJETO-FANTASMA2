@@ -1,8 +1,8 @@
 ---
-title: "Modelo Projeto - Quarto"
+title: "PROJETO FANTASMA"
 
 # Nome do documento PDF gerado
-output-file: titulo do projeto
+output-file: Projeto Fantasma
 ---
 
 ```{r}
@@ -29,5 +29,11 @@ tinytex::install_tinytex()
 # Referencial Teórico
 
 # Análises
+
+## Análise 1
+
+A análise a seguir tem como foco identificar quais países possuem o maior número de mulheres medalhistas. As variáveis que serão utilizadas são: Time (variável qualitativa nominal) e Número de medalhas (variável quantitativa discreta).
+
+O gráfico revela que os Estados Unidos estão liderando a contagem de medalhas, acumulando mais de 600, enquanto a Rússia ocupa a segunda posição. Os números da Rússia, China, Austrália e Alemanha são bastante próximos na modalidade feminina. No entanto, os Estados Unidos apresentam uma disparidade significativa em comparação com esses países.
 
 # Conclusões
