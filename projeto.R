@@ -4,7 +4,6 @@ library(stringr)
 library(forcats)
 library(tibble)
 library(tidyr)
-library(readxl)
 
 c1 <- read_excel("~/Olimpiadas 2000 - 2016.xlsx", sheet = "Athina")
 c2 <- read_excel("~/Olimpiadas 2000 - 2016.xlsx", sheet = "London")
@@ -20,7 +19,7 @@ colnames(c5) <- colnames(c1)
 
 
 banco= rbind(c1,c2,c3,c4,c5)
-
+banco= filter(banco, !is.na(Medal))
 # PADRONIZAÇÃO 
 estat_colors <- c(
   "#A11D21", "#003366", "#CC9900",
@@ -51,22 +50,33 @@ theme_estat <- function(...) {
 
 banco1= filter(banco, Gender == "F")
 banco1= filter(banco1, !is.na(Medal))
+resultado1<- banco1[banco1$Team %in% c("Germany", "United States", "Russia", "China", "Australia"), ]
 
-resultado1 <- banco1 %>%
-  group_by(Team) %>%             
-  summarise(total_medalhistas = n()) %>%   
-  arrange(desc(total_medalhistas)) %>%    
-  head(5)                                 
 resultado1$Team <- gsub("Germany", "Alemanha", resultado1$Team)
 resultado1$Team <- gsub("United States", "Estados Unidos", resultado1$Team)
 
 
-
-ggplot(resultado1, aes(x = reorder(Team, -total_medalhistas), y = total_medalhistas)) +
-  geom_bar(stat = "identity", fill = "#A11D21") +
-  labs(x = "Países", y = "Número de Medalhistas") +
+classes <- resultado1 %>%
+  filter(!is.na(Team)) %>%
+  count(Team) %>%
+  mutate(
+    freq = n,
+    relative_freq = round((freq / sum(freq)) * 100, 1),
+    freq = gsub("\\.", ",", relative_freq) %>% paste("%", sep = ""),
+    label = str_c(n, " (", freq, ")") %>% str_squish()
+  )
+ggplot(classes) +
+  aes(x = fct_reorder(Team, n, .desc=T), y = n, label = label) +
+  geom_bar(stat = "identity", fill = "#A11D21", width = 0.7) +
+  geom_text(
+    position = position_dodge(width = .9),
+    vjust =-0.5, #hjust = .5,
+    size = 3
+  ) +
+  labs(x = "Países", y = "Medalhas") +
   theme_estat()
-ggsave("grafico1.jpg", width = 158, height = 93, units = "mm")
+ggsave("colunas-uni-freq.png", width = 158, height = 93, units = "mm"
+)
 
 
 # análise 2
@@ -84,11 +94,11 @@ banco2$altura_m <- banco2$altura/100
 # Calcular o IMC
 banco2$IMC <- banco2$peso_kg / (banco2$altura_m^2)
 
-resultado2 <- banco2[banco2$Sport %in% c("Gymnastics", "Soccer", "Judo", "Athletics", "Badminton"), ]
-
+resultado2 <- banco2[banco2$Sport %in% c("Gymnastics", "Football", "Judo", "Athletics", "Badminton"), ]
+resultado2 <- filter(resultado2, !is.na(Medal))
 
 resultado2$Sport <- gsub("Gymnastics", "Ginástica", resultado2$Sport)
-resultado2$Sport <- gsub("Goccer", "Futebol", resultado2$Sport)
+resultado2$Sport <- gsub("Football", "Futebol", resultado2$Sport)
 resultado2$Sport <- gsub("Judo", "Judô", resultado2$Sport)
 resultado2$Sport <- gsub("Athletics", "Atletismo", resultado2$Sport)
 
@@ -132,7 +142,6 @@ print_quadro_resumo <- function(data, var_name, title = "Medidas resumo da(o) [n
   latex <- str_c("\\begin{quadro}[H]\n",
                  "\\caption{", title, "}\n",
                  "\\centering\n",
-                 "\\begin{adjustbox}{max width=\\textwidth}\n",
                  "\\begin{tabular}{", sep = "")
   
   col_count <- ncol(data)
@@ -190,58 +199,52 @@ resultado2 %>%
   group_by(Sport) %>% # caso mais de uma categoria
   print_quadro_resumo(var_name = IMC)
 
-```{r, results='asis'}
 
-tabela_latex <- "
-\\begin{quadro}[H]
-\\caption{Medidas resumo da(o) [nome da variável]}
-\\centering
-\\begin{adjustbox}{max width=\\textwidth}
-\\begin{tabular}{| l |
-			S[table-format = 2.2]
-			S[table-format = 1.2]
-			S[table-format = 2.2]
-			S[table-format = 2.2]
-			|}
-	\\toprule
-		\\textbf{Estatística}& \\textbf{Atletismo}& \\textbf{Badminton}& \\textbf{Ginástica}& \\textbf{Judô}\\\\
-		\\midrule
-		Média & 22.03 & 22.39 & 21.15 & 25.55 \\\\
-		Desvio Padrão & 3.77 & 1.78 & 2.30 & 5.12 \\\\
-		Variância & 14.23 &  3.18 &  5.29 & 26.20 \\\\
-		Mínimo & 14.98 & 16.90 & 14.08 & 17.58 \\\\
-		1º Quartil & 19.61 & 21.22 & 19.57 & 22.28 \\\\
-		Mediana & 21.20 & 22.30 & 21.36 & 24.41 \\\\
-		3º Quartil & 23.34 & 23.31 & 22.77 & 27.41 \\\\
-		Máximo & 44.38 & 31.14 & 30.82 & 63.90 \\\\
-	\\bottomrule
-	\\end{tabular}
-	\\label{quad:quadro_resumo1}
-	\\end{adjustbox}
-\\end{quadro}"
+#Análise 3 
+resultados3= banco
 
-cat(tabela_latex)
-```
+medal_count <- resultados3 %>%
+  group_by(Names, Medal) %>%
+  summarise(freq = n(), .groups = 'drop')
 
-```{r}
-library(ggplot2)
-install.packages("gridExtra")
-library(gridExtra)
-library(grid)
 
-# Criando a tabela com os dados (substitua os dados reais)
-quadro_resumo1 <- data.frame(
-  Estatística = c("Média", "Desvio Padrão", "Variância", "Mínimo", "1º Quartil", "Mediana", "3º Quartil", "Máximo"),
-  Atletismo = c(22.03, 3.77, 14.23, 14.98, 19.61, 21.20, 23.34, 44.38),
-  Badminton = c(22.39, 1.78, 3.18, 16.90, 21.22, 22.30, 23.31, 31.14),
-  Ginástica = c(21.15, 2.30, 5.29, 14.08, 19.57, 21.36, 22.77, 30.82),
-  Judô = c(25.55, 5.12, 26.20, 17.58, 22.28, 24.41, 27.41, 63.90)
-)
+top_medalists <- medal_count %>%
+  group_by(Names) %>%
+  summarise(total_medals = sum(freq)) %>%
+  arrange(desc(total_medals)) %>%
+  slice_head(n = 3) %>%
+  pull(Names)
 
-# Criando a tabela com gridExtra
-tabela <- tableGrob(quadro_resumo1)
 
-# Salvando a tabela como uma imagem
-ggsave("tabela_resumo.png", tabela, width = 8, height = 6)
+medal_count_top <- medal_count %>%
+  filter(Names %in% top_medalists)
 
-```
+
+medal_count_top <- medal_count_top %>%
+  group_by(Names) %>%
+  mutate(freq_relativa = round(freq / sum(freq) * 100, 1)) %>%
+  ungroup()
+
+
+porcentagens <- str_c(medal_count_top$freq_relativa, "%") %>% str_replace("\\.", ",")
+legendas <- str_squish(str_c(medal_count_top$freq, " (", porcentagens, ")"))
+
+
+p <- ggplot(medal_count_top) +
+  aes(
+    x = fct_reorder(Names, freq_relativa, .desc = TRUE),
+    y = freq_relativa,
+    fill = Medal,
+    label = legendas
+  ) +
+  geom_col(position = position_dodge2(preserve = "single", padding = 0)) +
+  geom_text(
+    position = position_dodge(width = 0.9),
+    vjust = -0.5,
+    hjust = 0.5,
+    size = 3
+  ) +
+  labs(x = "Atletas", y = "Frequência Relativa (%)") +
+  theme_estat()
+
+ggsave("colunas-bi-freq-top-medalistas.png", plot = p, width = 158, height = 93, units = "mm")

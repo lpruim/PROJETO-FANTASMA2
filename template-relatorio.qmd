@@ -13,11 +13,21 @@ output-file: Projeto Fantasma.
 
 ## Análise 1
 
-A análise a seguir tem como foco identificar quais países possuem o maior número de mulheres medalhistas. As variáveis que serão utilizadas são: Time (variável qualitativa nominal) e Número de medalhas (variável quantitativa discreta).
+A análise a seguir tem como foco comparar a distribuição de medalhas entre diferentes países. O objetivo é identificar as variações no desempenho esportivo de cada nação, avaliando as proporções de medalhas conquistadas. As variáveis analisadas incluem os países (variável qualitativa nominal) e o número de medalhas (variável quantitativa discreta).
 
-![](grafico1.jpg)
+![](colunas-uni-freq.png)
 
-O gráfico revela que os Estados Unidos estão liderando a contagem de medalhas, acumulando mais de 600, enquanto a Rússia ocupa a segunda posição. Os números da Rússia, China, Austrália e Alemanha são bastante próximos na modalidade feminina. No entanto, os Estados Unidos apresentam uma disparidade significativa em comparação com esses países.
+A análise desse gráfico destaca a liderança expressiva dos Estados Unidos, que acumulam 741 medalhas, correspondendo a 34,5% do total. Essa superioridade indica que o país é historicamente dominante em competições de grande porte, como Olimpíadas, com uma vasta gama de atletas altamente competitivos em diversos esportes.
+
+Em segundo lugar, temos a Rússia com 416 medalhas (19,4%), uma porcentagem bem menor em comparação aos Estados Unidos, mas que ainda demonstra a importância do país no cenário esportivo internacional. Vale destacar que, apesar das mudanças geopolíticas ao longo dos anos, o desempenho esportivo da Rússia continua significativo.
+
+A China ocupa a terceira posição, com 384 medalhas (17,9%). O crescimento esportivo da China, especialmente nas últimas décadas, reflete a forte ênfase do país em desenvolver atletas de alta performance, principalmente em esportes como ginástica, levantamento de peso e natação.
+
+A Austrália, com 340 medalhas (15,8%), é um dos países de menor população na lista, mas com um desempenho esportivo notável, especialmente em esportes aquáticos como natação e vela.
+
+Por fim, a Alemanha fecha a lista com 268 medalhas (12,5%). Embora a porcentagem seja menor, o país tem uma longa tradição de sucesso em esportes como atletismo, ciclismo e esportes de inverno.
+
+Este gráfico oferece uma visão clara das potências esportivas globais e de como diferentes países se destacam em competições de alto nível. Ele pode ser utilizado para gerar insights sobre investimentos esportivos e desenvolvimento de talentos em cada nação. Se você precisar de mais alguma análise ou detalhamento, estou à disposição!
 
 ## Análise 2
 
@@ -26,63 +36,57 @@ A análise a seguir tem como foco comparar o índice de massa corporal (IMC) de 
 ![](grafico2.jpg)
 
 ```{r, results='asis',echo=FALSE}
-
 tabela_latex <- "
 \\begin{quadro}[H]
+\\caption{Medidas resumo da nota de IMC por esporte}
 \\centering
-\\begin{adjustbox}{max width=\\textwidth}
 \\begin{tabular}{| l |
 			S[table-format = 2.2]
 			S[table-format = 1.2]
 			S[table-format = 2.2]
 			S[table-format = 2.2]
+			S[table-format = 2.2]
 			|}
 	\\toprule
-		\\textbf{Estatística}& \\textbf{Atletismo}& \\textbf{Badminton}& \\textbf{Ginástica}& \\textbf{Judô}\\\\
+		\\textbf{Estatística}& \\textbf{Atletismo}& \\textbf{Badminton}& \\textbf{Futebol}& \\textbf{Ginástica}& \\textbf{Judô}\\\\
 		\\midrule
-		Média & 22.03 & 22.39 & 21.15 & 25.55 \\\\
-		Desvio Padrão & 3.77 & 1.78 & 2.30 & 5.12 \\\\
-		Variância & 14.23 &  3.18 &  5.29 & 26.20 \\\\
-		Mínimo & 14.98 & 16.90 & 14.08 & 17.58 \\\\
-		1º Quartil & 19.61 & 21.22 & 19.57 & 22.28 \\\\
-		Mediana & 21.20 & 22.30 & 21.36 & 24.41 \\\\
-		3º Quartil & 23.34 & 23.31 & 22.77 & 27.41 \\\\
-		Máximo & 44.38 & 31.14 & 30.82 & 63.90 \\\\
+		Média & 22.30 & 22.21 & 22.51 & 20.68 & 25.70 \\\\
+		Desvio Padrão & 3.86 & 1.50 & 1.73 & 2.38 & 5.12 \\\\
+		Variância & 14.92 &  2.26 &  2.99 &  5.67 & 26.23 \\\\
+		Mínimo & 15.82 & 18.94 & 16.73 & 15.16 & 18.52 \\\\
+		1º Quartil & 20.03 & 21.22 & 21.34 & 18.61 & 22.06 \\\\
+		Mediana & 21.45 & 22.28 & 22.49 & 21.09 & 24.68 \\\\
+		3º Quartil & 23.67 & 23.21 & 23.71 & 22.48 & 27.70 \\\\
+		Máximo & 44.38 & 26.73 & 29.07 & 26.45 & 56.50 \\\\
 	\\bottomrule
 	\\end{tabular}
 	\\label{quad:quadro_resumo1}
-	\\end{adjustbox}
-\\end{quadro}"
-
+\\end{quadro}
+"
 cat(tabela_latex)
-```
-
-```{r, echo=FALSE}
-library(ggplot2)
-library(gridExtra)
-library(grid)
-
-# Criando a tabela com os dados (substitua os dados reais)
-quadro_resumo1 <- data.frame(
-    Estatística = c("Média", "Desvio Padrão", "Variância", "Mínimo", "1º Quartil", "Mediana", "3º Quartil", "Máximo"),
-    Atletismo = c(22.03, 3.77, 14.23, 14.98, 19.61, 21.20, 23.34, 44.38),
-    Badminton = c(22.39, 1.78, 3.18, 16.90, 21.22, 22.30, 23.31, 31.14),
-    Ginástica = c(21.15, 2.30, 5.29, 14.08, 19.57, 21.36, 22.77, 30.82),
-    Judô = c(25.55, 5.12, 26.20, 17.58, 22.28, 24.41, 27.41, 63.90)
-)
-
-# Criando a tabela com gridExtra
-tabela <- tableGrob(quadro_resumo1)
-
-# Salvando a tabela como uma imagem
-ggsave("tabela_resumo.png", tabela, width = 8, height = 6)
 
 ```
 
-Quadro de medidas resumo do IMC.
+Os atletas de Judô têm o maior IMC médio (25,70), com grande dispersão (desvio padrão de 5,12) e vários outliers. Isso reflete a diversidade de perfis corporais devido às diferentes categorias de peso, que exigem variações na composição corporal para maximizar o desempenho.
 
-![](tabela_resumo.png)
+Esportes como Ginástica, Atletismo, Badminton e Futebol apresentam IMCs mais baixos e menor variação. Ginástica, com o menor IMC médio (20,68), destaca-se pela uniformidade física entre os atletas, o que reflete a necessidade de corpos leves e flexíveis. O Atletismo tem um IMC médio de 22,30, com maior variação devido à diversidade das disciplinas, onde corredores têm IMCs mais baixos e competidores de força, mais altos.
 
-A análise dos dados revela que o Judô apresenta o maior IMC médio (25,65) e a maior variação, com grande dispersão e numerosos outliers, indicando diferenças significativas entre os atletas. Em contrapartida, esportes como Ginástica, Atletismo e Badminton possuem IMCs mais baixos e menor variação, sendo que a Ginástica apresenta a menor média (21,15) e dispersão. Isso sugere que o Judô tem uma maior diversidade de perfis corporais, enquanto os demais esportes mostram atletas com IMCs mais uniformes.
+Badminton exibe um IMC médio baixo (22,21) e a menor variação (desvio padrão de 1,50), refletindo a necessidade de agilidade e resistência. Já o Futebol tem um IMC médio de 22,51, com leve dispersão e sem outliers, indicando uma relativa uniformidade física entre os jogadores, que equilibram força e leveza.
 
-# Conclusões
+Os box-plots confirmam essas conclusões: Judô apresenta maior variação, enquanto os outros esportes mostram distribuições mais concentradas, refletindo a necessidade de biotipos mais homogêneos para desempenho ideal.
+
+Em resumo, as diferenças de IMC entre as modalidades esportivas destacam como cada esporte impõe exigências físicas únicas aos seus atletas. O Judô, com suas categorias de peso, apresenta uma maior variação no perfil corporal, enquanto esportes como Futebol, Badminton, Atletismo e Ginástica tendem a promover um biotipo mais uniforme, ajustado às demandas específicas de cada modalidade.
+
+## Análise 3
+
+A análise a seguir tem como foco identificar os três principais medalhistas em termos de quantidade total de medalhas, destacando a distribuição entre os tipos de medalha (ouro, prata e bronze). O objetivo é compreender a relação entre o desempenho desses atletas e a proporção de medalhas conquistadas, oferecendo uma visão sobre a regularidade e consistência nos pódios.
+
+![](colunas-bi-freq-top-medalistas.png)
+
+O gráfico revela que Michael Fred Phelps, II se destaca como o maior medalhista, com 82,1% de suas medalhas sendo de ouro (23 medalhas), evidenciando sua dominância absoluta nas competições. Ele possui apenas 3 medalhas de prata (10,7%) e 2 de bronze (7,1%), indicando que sua participação nos pódios está fortemente associada às vitórias.
+
+Em contraste, tanto Ryan Steven Lochte quanto Natalie Anne Coughlin (-Hall) mostram uma distribuição mais equilibrada entre os tipos de medalhas. Lochte conquistou 50% de medalhas de ouro (6), com as demais sendo igualmente distribuídas entre prata e bronze (25% cada, com 3 medalhas de cada tipo). Isso sugere uma consistência em terminar entre os primeiros colocados, mas sem a mesma dominância de Phelps.
+
+Natalie Anne Coughlin (-Hall) também apresenta uma distribuição interessante, com 41,7% de suas medalhas sendo de bronze (5), 33,3% de ouro (4), e 25% de prata (3). Essa maior concentração em medalhas de bronze indica que, apesar de sua frequência no pódio, ela terminou mais vezes em terceiro lugar, mantendo-se ainda como uma atleta altamente competitiva.
+
+A análise mostra que enquanto Phelps tem um domínio absoluto em suas conquistas, conquistando principalmente medalhas de ouro, Lochte e Coughlin apresentam uma distribuição mais equilibrada entre os diferentes tipos de medalhas. Isso reflete a alta competitividade entre os principais nadadores, com cada um demonstrando características distintas em suas trajetórias de sucesso. \# Conclusões
