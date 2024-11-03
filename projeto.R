@@ -248,3 +248,22 @@ p <- ggplot(medal_count_top) +
   theme_estat()
 
 ggsave("colunas-bi-freq-top-medalistas.png", plot = p, width = 158, height = 93, units = "mm")
+
+#analise4 
+banco4= banco
+colnames(banco4)[5] <- "peso"
+
+colnames(banco4)[4] <- "altura"
+
+banco4$peso_kg <- banco4$peso * 0.453592
+banco4$altura_m <- banco4$altura/100
+
+
+ggplot(banco4) + aes(x = altura_m, y = peso_kg) +
+  geom_point(colour = "#A11D21", size = 3) +
+  labs(
+    x = "Altura(Metro)",
+    y = "Peso (KG)"
+  ) +
+  theme_estat()
+ggsave("disp_uni4.jpg", width = 158, height = 93, units = "mm")
