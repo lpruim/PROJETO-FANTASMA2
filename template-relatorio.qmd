@@ -89,4 +89,18 @@ Em contraste, tanto Ryan Steven Lochte quanto Natalie Anne Coughlin (-Hall) most
 
 Natalie Anne Coughlin (-Hall) também apresenta uma distribuição interessante, com 41,7% de suas medalhas sendo de bronze (5), 33,3% de ouro (4), e 25% de prata (3). Essa maior concentração em medalhas de bronze indica que, apesar de sua frequência no pódio, ela terminou mais vezes em terceiro lugar, mantendo-se ainda como uma atleta altamente competitiva.
 
-A análise mostra que enquanto Phelps tem um domínio absoluto em suas conquistas, conquistando principalmente medalhas de ouro, Lochte e Coughlin apresentam uma distribuição mais equilibrada entre os diferentes tipos de medalhas. Isso reflete a alta competitividade entre os principais nadadores, com cada um demonstrando características distintas em suas trajetórias de sucesso. \# Conclusões
+A análise mostra que enquanto Phelps tem um domínio absoluto em suas conquistas, conquistando principalmente medalhas de ouro, Lochte e Coughlin apresentam uma distribuição mais equilibrada entre os diferentes tipos de medalhas. Isso reflete a alta competitividade entre os principais nadadores, com cada um demonstrando características distintas em suas trajetórias de sucesso.
+
+## Análise 4
+
+A análise a seguir investiga a relação entre a altura e o peso dos atletas olímpicos, abrangendo diversas modalidades esportivas. Ambas as variáveis -- altura (em metros) e peso (em quilogramas) -- são quantitativas contínuas, e o objetivo é verificar se há uma correlação entre essas medidas físicas. Para avaliar essa relação, foi utilizado o coeficiente de correlação de Pearson.
+
+![](disp_uni4.jpg)
+
+O cálculo do coeficiente de Pearson resultou em um valor de aproximadamente 0,8053, indicando uma correlação positiva forte entre altura e peso dos atletas olímpicos. Esse coeficiente sugere que, em média, conforme a altura dos atletas aumenta, o peso também tende a crescer proporcionalmente. Essa relação é coerente com o fato de que atletas mais altos frequentemente possuem maior massa corporal, uma característica que pode ser benéfica em muitos esportes de alto rendimento.
+
+Observando a distribuição, a maioria dos atletas olímpicos está concentrada em uma faixa de altura entre 1,5 e 2,0 metros e peso entre 50 e 100 kg. Essa faixa representa o perfil físico predominante nas Olimpíadas, porém há variações significativas. Esportes como ginástica tendem a ter atletas menores e mais leves, enquanto modalidades como basquete, vôlei e natação geralmente exigem altura e peso maiores para melhorar o desempenho. Nos esportes de combate, como o judô e o boxe, encontramos uma variabilidade de peso para uma mesma altura, pois esses esportes possuem categorias de peso específicas, permitindo uma ampla gama de perfis físicos entre os atletas de mesma estatura.
+
+A análise sugere que características físicas como altura e peso estão fortemente relacionadas e influenciam o tipo de esporte em que os atletas se destacam nas Olimpíadas. Modalidades que demandam força e estabilidade, como levantamento de peso, ou esportes que favorecem a altura, como basquete e vôlei, costumam ter atletas com perfis físicos específicos. Essa forte correlação (0,8053) entre altura e peso fornece insights valiosos para treinadores e profissionais esportivos, ajudando a identificar perfis físicos ideais para diferentes modalidades e a orientar o desenvolvimento de talentos.
+
+# Conclusões

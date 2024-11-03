@@ -267,3 +267,7 @@ ggplot(banco4) + aes(x = altura_m, y = peso_kg) +
   ) +
   theme_estat()
 ggsave("disp_uni4.jpg", width = 158, height = 93, units = "mm")
+
+
+
+cor(banco4$altura_m, banco4$peso_kg, method = "pearson", use = "complete.obs")
