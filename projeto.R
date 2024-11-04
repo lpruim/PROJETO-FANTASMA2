@@ -201,12 +201,18 @@ resultado2 %>%
 
 
 #Análise 3 
-resultados3= banco
+# Bibliotecas necessárias
+library(dplyr)
+library(ggplot2)
+library(forcats)
+library(stringr)
+
+# Pré-processamento dos dados
+resultados3 = banco
 
 medal_count <- resultados3 %>%
   group_by(Names, Medal) %>%
   summarise(freq = n(), .groups = 'drop')
-
 
 top_medalists <- medal_count %>%
   group_by(Names) %>%
@@ -215,24 +221,27 @@ top_medalists <- medal_count %>%
   slice_head(n = 3) %>%
   pull(Names)
 
-
 medal_count_top <- medal_count %>%
   filter(Names %in% top_medalists)
-
 
 medal_count_top <- medal_count_top %>%
   group_by(Names) %>%
   mutate(freq_relativa = round(freq / sum(freq) * 100, 1)) %>%
   ungroup()
 
+# Traduzindo nomes das medalhas e ordenando de forma ordinal
+medal_count_top$Medal <- factor(medal_count_top$Medal,
+                                levels = c("Gold", "Silver", "Bronze"),
+                                labels = c("Ouro", "Prata", "Bronze"))
 
+# Criando as legendas com porcentagens
 porcentagens <- str_c(medal_count_top$freq_relativa, "%") %>% str_replace("\\.", ",")
 legendas <- str_squish(str_c(medal_count_top$freq, " (", porcentagens, ")"))
 
-
+# Gerando o gráfico com ajustes de ordenação e posições dos rótulos
 p <- ggplot(medal_count_top) +
   aes(
-    x = fct_reorder(Names, freq_relativa, .desc = TRUE),
+    x = fct_reorder(Names, -freq_relativa),  # Ordenando frequência decrescente
     y = freq_relativa,
     fill = Medal,
     label = legendas
@@ -240,14 +249,14 @@ p <- ggplot(medal_count_top) +
   geom_col(position = position_dodge2(preserve = "single", padding = 0)) +
   geom_text(
     position = position_dodge(width = 0.9),
-    vjust = -0.5,
+    vjust = -0.3,  # Ajuste vertical do texto
     hjust = 0.5,
     size = 3
   ) +
   labs(x = "Atletas", y = "Frequência Relativa (%)") +
-  theme_estat()
-
-ggsave("colunas-bi-freq-top-medalistas.png", plot = p, width = 158, height = 93, units = "mm")
+  theme_estat() 
+# Salvando o gráfico corrigido
+ggsave("colunas-bi-freq-top-medalistas-corrigido.png", plot = p, width = 158, height = 93, units = "mm")
 
 #analise4 
 banco4= banco
