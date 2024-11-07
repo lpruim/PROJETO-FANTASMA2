@@ -47,10 +47,14 @@ theme_estat <- function(...) {
   )
 }
 # Analise 1 
+banco12= banco
+banco12= filter(banco12, Gender == "F")
+banco12= filter(banco12, !is.na(Medal))
+medalhistas_unicos <- banco12 %>%
+  distinct(Names, Team) 
 
-banco1= filter(banco, Gender == "F")
-banco1= filter(banco1, !is.na(Medal))
-resultado1<- banco1[banco1$Team %in% c("Germany", "United States", "Russia", "China", "Australia"), ]
+
+resultado1<- medalhistas_unicos[medalhistas_unicos$Team %in% c("Germany", "United States", "Russia", "China", "Australia"), ]
 
 resultado1$Team <- gsub("Germany", "Alemanha", resultado1$Team)
 resultado1$Team <- gsub("United States", "Estados Unidos", resultado1$Team)
@@ -73,7 +77,7 @@ ggplot(classes) +
     vjust =-0.5, #hjust = .5,
     size = 3
   ) +
-  labs(x = "Países", y = "Medalhas") +
+  labs(x = "Países", y = "Medalhistas") +
   theme_estat()
 ggsave("colunas-uni-freq.png", width = 158, height = 93, units = "mm"
 )

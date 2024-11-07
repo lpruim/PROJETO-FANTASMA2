@@ -204,17 +204,17 @@ A análise a seguir tem como foco comparar a distribuição de medalhas entre di
 
 ![](colunas-uni-freq.png)
 
-A análise deste gráfico destaca a **liderança expressiva dos Estados Unidos**, que acumulam **741 medalhas**, correspondendo a **34,5% do total**. Essa **superioridade** indica que o país é historicamente **dominante em competições de grande porte**, como as Olimpíadas, com uma **vasta gama de atletas altamente competitivos** em diversos esportes.
+O gráfico atualizado evidencia a **liderança expressiva dos Estados Unidos**, com um total de **443 medalhistas, representando 31,3% do total**. Este valor reflete a **dominância histórica do país em competições internacionais**, especialmente nas Olimpíadas, com uma ampla base de **atletas altamente competitivos** em várias modalidades esportivas.
 
-Em **segundo lugar**, temos a **Rússia com 416 medalhas (19,4%)**, uma porcentagem bem menor em comparação aos Estados Unidos, mas que ainda demonstra a **importância do país no cenário esportivo internacional**. Vale destacar que, apesar das **mudanças geopolíticas ao longo dos anos**, o desempenho esportivo da Rússia continua **significativo**.
+A **Rússia aparece em segundo lugar, com 298 medalhistas (21%)**. Apesar das mudanças geopolíticas e algumas restrições recentes em competições, o país continua a **demonstrar sua importância no cenário esportivo mundial**.
 
-A **China ocupa a terceira posição**, com **384 medalhas (17,9%)**. O **crescimento esportivo da China**, especialmente nas últimas décadas, reflete a **forte ênfase do país em desenvolver atletas de alta performance**, principalmente em esportes como **ginástica, levantamento de peso e natação**.
+A **China ocupa a terceira posição, com 268 medalhistas (18,9%)**, evidenciando o **crescimento esportivo do país nas últimas décadas**. O **forte investimento em modalidades como ginástica, levantamento de peso e natação** reflete-se nos números expressivos de medalhas.
 
-A **Austrália**, com **340 medalhas (15,8%)**, é um dos países de **menor população** na lista, mas com um **desempenho esportivo notável**, especialmente em **esportes aquáticos** como **natação e vela**.
+A **Austrália, com 219 medalhistas (15,5%)**, se destaca, especialmente considerando sua **menor população** em comparação aos demais países no gráfico. O país é tradicionalmente forte em **esportes aquáticos, como natação e vela**, contribuindo para seu desempenho robusto.
 
-Por fim, a **Alemanha** fecha a lista com **268 medalhas (12,5%)**. Embora a porcentagem seja menor, o país tem uma **longa tradição de sucesso** em esportes como **atletismo, ciclismo e esportes de inverno**.
+Por fim, a **Alemanha, com 188 medalhistas (13,3%)**, completa o grupo dos cinco principais países. Sua **longa tradição de sucesso em esportes como atletismo, ciclismo e esportes de inverno** assegura sua posição entre as potências esportivas globais.
 
-Este gráfico oferece uma **visão clara das potências esportivas globais** e de como diferentes países se destacam em **competições de alto nível**. Ele pode ser utilizado para gerar **insights sobre investimentos esportivos** e **desenvolvimento de talentos** em cada nação.
+Este gráfico oferece uma **visão clara das principais potências esportivas**, evidenciando a **dominância dos Estados Unidos, seguidos pela Rússia e China**. A análise dos **números de medalhistas permite insights** sobre os **investimentos e políticas esportivas** de cada país, bem como a **importância dada ao desenvolvimento de atletas de alta performance**.
 
 ## Análise 2
 
@@ -284,33 +284,36 @@ A análise a seguir investiga a relação entre a altura e o peso dos atletas ol
 
 ![](disp_uni4.jpg)
 
-**O cálculo do coeficiente de Pearson** resultou em um valor de aproximadamente **0,8053**, indicando uma **correlação positiva forte entre altura e peso dos atletas olímpicos**. Esse coeficiente sugere que, em média, **conforme a altura dos atletas aumenta, o peso também tende a crescer proporcionalmente**. Essa relação é coerente com o fato de que **atletas mais altos frequentemente possuem maior massa corporal**, uma característica que pode ser benéfica em muitos esportes de alto rendimento.
+O cálculo do coeficiente de Pearson resultou em um valor de aproximadamente **0,8053**, indicando uma **correlação positiva forte** entre altura e peso dos atletas olímpicos. Esse coeficiente sugere que, em média, conforme a altura dos atletas aumenta, o peso também tende a crescer proporcionalmente. Essa relação é coerente com o fato de que **atletas mais altos frequentemente possuem maior massa corporal**, uma característica que pode ser benéfica em muitos esportes de alto rendimento.
 
-Observando a distribuição, a maioria dos atletas olímpicos está concentrada em uma faixa de **altura entre 1,5 e 2,0 metros e peso entre 50 e 100 kg**. Essa faixa representa o **perfil físico predominante nas Olimpíadas**, porém há variações significativas. Esportes como **ginástica tendem a ter atletas menores e mais leves**, enquanto modalidades como **basquete, vôlei e natação geralmente exigem altura e peso maiores** para melhorar o desempenho. Nos esportes de combate, como o **judô e o boxe**, encontramos uma **variabilidade de peso para uma mesma altura**, pois esses esportes possuem **categorias de peso específicas**, permitindo uma ampla gama de perfis físicos entre os atletas de mesma estatura.
+Observando a distribuição dos dados, a maioria dos atletas olímpicos se concentra em uma faixa de **altura entre 1,5 e 2,0 metros** e **peso entre 50 e 100 kg**. Essa faixa representa o **perfil físico predominante** nas Olimpíadas, embora existam variações significativas entre as modalidades. Por exemplo, esportes como **ginástica** apresentam atletas menores e mais leves, enquanto modalidades como **basquete, vôlei e natação** costumam exigir maior estatura e peso, o que favorece o desempenho nesses esportes. Já nos esportes de combate, como **judô e boxe**, observamos uma ampla gama de perfis físicos para a mesma altura, devido às **categorias de peso** que permitem maior variabilidade entre os atletas.
 
-A análise sugere que **características físicas como altura e peso estão fortemente relacionadas e influenciam o tipo de esporte** em que os atletas se destacam nas Olimpíadas. Modalidades que demandam **força e estabilidade, como levantamento de peso**, ou esportes que **favorecem a altura, como basquete e vôlei**, costumam ter atletas com **perfis físicos específicos**. Essa **forte correlação (0,8053) entre altura e peso** fornece **insights valiosos para treinadores e profissionais esportivos**, ajudando a **identificar perfis físicos ideais para diferentes modalidades** e a orientar o desenvolvimento de talentos.
+Para garantir **consistência e clareza** nos gráficos, todas as unidades de peso foram padronizadas em **quilogramas (kg)**, evitando distorções e facilitando uma leitura precisa da **dispersão dos dados**. Além disso, a análise da dispersão revela uma concentração dos atletas na faixa central de altura e peso, com maior densidade entre **1,5-2,0 metros e 50-100 kg**, enquanto nos extremos, observamos dispersão especialmente em esportes que exigem perfis físicos específicos. Essa descrição complementa a análise textual e gráfica, proporcionando uma visão mais clara do comportamento dos dados.
+
+Em conclusão, a análise sugere que características físicas como **altura e peso** estão fortemente relacionadas, influenciando o tipo de esporte em que os atletas se destacam nas Olimpíadas. Modalidades que demandam **força e estabilidade**, como levantamento de peso, ou que favorecem maior estatura, como **basquete e vôlei**, apresentam perfis físicos específicos. Essa **forte correlação (0,8053)** entre altura e peso oferece **insights valiosos para treinadores e profissionais esportivos**, auxiliando na identificação de perfis físicos ideais para diferentes modalidades e orientando o desenvolvimento de talentos.
 
 # Conclusões
-
 
 Este relatório reúne análises abrangentes e detalhadas sobre o desempenho e características físicas de atletas olímpicos entre 2000 e 2016, proporcionando insights para o aprimoramento de estratégias de treinamento na House of Excellence. A seguir, são apresentadas as principais conclusões das análises:
 
 ## Análise 1: Desempenho por País
+
 A análise dos cinco países com maior número de medalhas revela o domínio expressivo dos **Estados Unidos**, que representam 34,5% do total de medalhas, refletindo sua tradição e investimento constante no esporte de elite. **Rússia** e **China** também apresentam desempenhos significativos, indicando fortes programas de desenvolvimento de atletas. **Austrália** e **Alemanha** completam a lista, com o primeiro se destacando em esportes aquáticos e o segundo em modalidades variadas, reforçando a importância de focar em especializações estratégicas. Essa visão fornece uma base para que a House of Excellence avalie modelos de sucesso e desenvolva talentos de forma direcionada.
 
 ## Análise 2: Índice de Massa Corporal (IMC) por Modalidade Esportiva
-A comparação do IMC entre diferentes esportes destaca variações significativas que refletem as exigências físicas de cada modalidade:
-- **Judô** apresenta o maior IMC médio e a maior variabilidade, indicando a importância da diversidade corporal nas diferentes categorias de peso.
-- **Ginástica** possui o menor IMC médio, evidenciando a necessidade de um corpo leve e flexível.
-- **Atletismo**, **Badminton** e **Futebol** mostram IMCs relativamente baixos e homogêneos, reforçando a uniformidade física para otimizar a performance. 
+
+A comparação do IMC entre diferentes esportes destaca variações significativas que refletem as exigências físicas de cada modalidade: - **Judô** apresenta o maior IMC médio e a maior variabilidade, indicando a importância da diversidade corporal nas diferentes categorias de peso. - **Ginástica** possui o menor IMC médio, evidenciando a necessidade de um corpo leve e flexível. - **Atletismo**, **Badminton** e **Futebol** mostram IMCs relativamente baixos e homogêneos, reforçando a uniformidade física para otimizar a performance.
 
 Esses resultados sugerem que a House of Excellence pode adaptar programas de treinamento considerando as características físicas ideais para cada modalidade, otimizando o rendimento dos atletas.
 
 ## Análise 3: Perfil dos Principais Medalhistas
+
 A análise dos três maiores medalhistas olímpicos destaca **Michael Phelps** pela dominância absoluta, com 82,1% de suas medalhas sendo de ouro, evidenciando sua consistência no topo do pódio. **Ryan Lochte** e **Natalie Coughlin** apresentam uma distribuição mais equilibrada de medalhas, demonstrando alto nível competitivo, embora sem a mesma supremacia de Phelps. Esses perfis indicam diferentes abordagens de treinamento e especialização que podem ser exploradas, permitindo à House of Excellence identificar e aplicar estratégias que fomentem a consistência e a excelência entre os atletas.
 
 ## Análise 4: Relação entre Altura e Peso
+
 A forte correlação (0,8053) entre altura e peso mostra que, em geral, à medida que a altura aumenta, o peso tende a crescer proporcionalmente. Este padrão é particularmente relevante em esportes como **basquete**, **vôlei** e **natação**, onde altura e massa corporal são frequentemente associadas a melhor desempenho. Nos esportes de combate, como o **judô**, a variabilidade entre altura e peso é mais acentuada devido às categorias de peso. Esses insights fornecem uma base científica para orientar treinamentos específicos, ajudando a moldar atletas com características físicas adequadas para maximizar o desempenho em suas modalidades.
 
 ## Considerações Finais
+
 Este relatório, em conjunto com o dashboard interativo no Power BI, oferece uma visão detalhada e flexível para João Neves e a equipe da House of Excellence. A análise das potências esportivas, a comparação de IMCs, o perfil dos principais medalhistas e a correlação entre altura e peso fornecem uma base sólida para estratégias de desenvolvimento e aprimoramento de atletas. Utilizando essas informações, a House of Excellence poderá direcionar esforços para adaptar programas de treinamento, promover especializações e identificar perfis físicos ideais para diferentes modalidades, maximizando as chances de sucesso de seus atletas em competições de alto nível.
