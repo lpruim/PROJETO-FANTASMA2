@@ -204,7 +204,7 @@ A análise a seguir tem como foco comparar a distribuição de medalhas entre di
 
 ![](colunas-uni-freq.png)
 
-O gráfico atualizado evidencia a **liderança expressiva dos Estados Unidos**, com um total de **443 medalhistas, representando 31,3% do total**. Este valor reflete a **dominância histórica do país em competições internacionais**, especialmente nas Olimpíadas, com uma ampla base de **atletas altamente competitivos** em várias modalidades esportivas.
+O gráfico evidencia a **liderança expressiva dos Estados Unidos**, com um total de **443 medalhistas, representando 31,3% do total**. Este valor reflete a **dominância histórica do país em competições internacionais**, especialmente nas Olimpíadas, com uma ampla base de **atletas altamente competitivos** em várias modalidades esportivas.
 
 A **Rússia aparece em segundo lugar, com 298 medalhistas (21%)**. Apesar das mudanças geopolíticas e algumas restrições recentes em competições, o país continua a **demonstrar sua importância no cenário esportivo mundial**.
 
