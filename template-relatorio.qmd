@@ -81,20 +81,6 @@ Se o cálculo da posição resultar em uma fração, deve-se fazer a média entr
 
 A variância é uma medida que avalia o quanto os dados estão dispersos em relação à média, em uma escala ao quadrado da escala dos dados.
 
-### Variância Populacional
-
-Para uma população, a variância é dada por:
-
-$$\sigma^2=\frac{\sum\limits_{i=1}^{N}\left(X_i - \mu\right)^2}{N}$$
-
-Com:
-
--   $X_i =$ $i$-ésima observação da população
-
--   $\mu =$ média populacional
-
--   $N =$ tamanho da população
-
 ### Variância Amostral
 
 Para uma amostra, a variância é dada por:
@@ -112,20 +98,6 @@ Com:
 ## Desvio Padrão
 
 O desvio padrão é a raiz quadrada da variância. Ele avalia o quanto os dados estão dispersos em relação à média.
-
-### Desvio Padrão Populacional
-
-Para uma população, o desvio padrão é dado por:
-
-$$\sigma=\sqrt{\frac{\sum\limits_{i=1}^{N}\left(X_i - \mu\right)^2}{N}}$$
-
-Com:
-
--   $X_i =$ i-ésima observação da população
-
--   $\mu =$ média populacional
-
--   $N =$ tamanho da população
 
 ### Desvio Padrão Amostral
 
@@ -294,26 +266,10 @@ Em conclusão, a análise sugere que características físicas como **altura e p
 
 # Conclusões
 
-Este relatório reúne análises abrangentes e detalhadas sobre o desempenho e características físicas de atletas olímpicos entre 2000 e 2016, proporcionando insights para o aprimoramento de estratégias de treinamento na House of Excellence. A seguir, são apresentadas as principais conclusões das análises:
+Este relatório reuniu análises detalhadas sobre o desempenho e as características físicas de atletas olímpicos entre 2000 e 2016, proporcionando insights valiosos para o desenvolvimento de estratégias na House of Excellence. A análise do desempenho dos principais países mostra o domínio dos Estados Unidos, que detêm 31,3% do total de medalhas, reflexo de um sólido histórico de tradição e investimentos no esporte de alto rendimento. Rússia e China também apresentam desempenhos expressivos, revelando programas rigorosos de desenvolvimento de atletas, enquanto Austrália e Alemanha completam a lista dos cinco principais países, com a Austrália se destacando nos esportes aquáticos e a Alemanha em modalidades variadas. Essa distribuição sugere que a especialização estratégica em certos esportes pode impulsionar a performance de países com investimentos direcionados.
 
-## Análise 1: Desempenho por País
+Na comparação do Índice de Massa Corporal (IMC) entre modalidades, a análise evidencia diferenças significativas que refletem as demandas físicas únicas de cada esporte. O judô apresenta o maior IMC médio e a maior variabilidade, o que indica uma diversidade de tipos corporais nas diferentes categorias de peso, permitindo que atletas com características variadas possam competir. Por outro lado, a ginástica se destaca com o menor IMC médio, o que evidencia a necessidade de um corpo leve e flexível para otimizar o desempenho nessa modalidade. Atletismo, badminton e futebol mostram valores de IMC baixos e relativamente homogêneos, sugerindo que uma composição corporal mais uniforme é vantajosa para a eficiência e agilidade exigidas nesses esportes.
 
-A análise dos cinco países com maior número de medalhas revela o domínio expressivo dos **Estados Unidos**, que representam 34,5% do total de medalhas, refletindo sua tradição e investimento constante no esporte de elite. **Rússia** e **China** também apresentam desempenhos significativos, indicando fortes programas de desenvolvimento de atletas. **Austrália** e **Alemanha** completam a lista, com o primeiro se destacando em esportes aquáticos e o segundo em modalidades variadas, reforçando a importância de focar em especializações estratégicas. Essa visão fornece uma base para que a House of Excellence avalie modelos de sucesso e desenvolva talentos de forma direcionada.
+O perfil dos principais medalhistas olímpicos, como Michael Phelps, Ryan Lochte e Natalie Coughlin, revela abordagens diferenciadas que destacam a importância da especialização e da consistência. Phelps, com 82,1% de suas medalhas sendo de ouro, exemplifica uma dominância que reflete um treinamento altamente especializado e voltado para o topo do pódio. Lochte e Coughlin, com uma distribuição mais equilibrada de medalhas, demonstram um alto nível competitivo, embora sem a supremacia absoluta de Phelps, sugerindo que diferentes estratégias de treinamento podem impactar o perfil de conquistas dos atletas.
 
-## Análise 2: Índice de Massa Corporal (IMC) por Modalidade Esportiva
-
-A comparação do IMC entre diferentes esportes destaca variações significativas que refletem as exigências físicas de cada modalidade: - **Judô** apresenta o maior IMC médio e a maior variabilidade, indicando a importância da diversidade corporal nas diferentes categorias de peso. - **Ginástica** possui o menor IMC médio, evidenciando a necessidade de um corpo leve e flexível. - **Atletismo**, **Badminton** e **Futebol** mostram IMCs relativamente baixos e homogêneos, reforçando a uniformidade física para otimizar a performance.
-
-Esses resultados sugerem que a House of Excellence pode adaptar programas de treinamento considerando as características físicas ideais para cada modalidade, otimizando o rendimento dos atletas.
-
-## Análise 3: Perfil dos Principais Medalhistas
-
-A análise dos três maiores medalhistas olímpicos destaca **Michael Phelps** pela dominância absoluta, com 82,1% de suas medalhas sendo de ouro, evidenciando sua consistência no topo do pódio. **Ryan Lochte** e **Natalie Coughlin** apresentam uma distribuição mais equilibrada de medalhas, demonstrando alto nível competitivo, embora sem a mesma supremacia de Phelps. Esses perfis indicam diferentes abordagens de treinamento e especialização que podem ser exploradas, permitindo à House of Excellence identificar e aplicar estratégias que fomentem a consistência e a excelência entre os atletas.
-
-## Análise 4: Relação entre Altura e Peso
-
-A forte correlação (0,8053) entre altura e peso mostra que, em geral, à medida que a altura aumenta, o peso tende a crescer proporcionalmente. Este padrão é particularmente relevante em esportes como **basquete**, **vôlei** e **natação**, onde altura e massa corporal são frequentemente associadas a melhor desempenho. Nos esportes de combate, como o **judô**, a variabilidade entre altura e peso é mais acentuada devido às categorias de peso. Esses insights fornecem uma base científica para orientar treinamentos específicos, ajudando a moldar atletas com características físicas adequadas para maximizar o desempenho em suas modalidades.
-
-## Considerações Finais
-
-Este relatório, em conjunto com o dashboard interativo no Power BI, oferece uma visão detalhada e flexível para João Neves e a equipe da House of Excellence. A análise das potências esportivas, a comparação de IMCs, o perfil dos principais medalhistas e a correlação entre altura e peso fornecem uma base sólida para estratégias de desenvolvimento e aprimoramento de atletas. Utilizando essas informações, a House of Excellence poderá direcionar esforços para adaptar programas de treinamento, promover especializações e identificar perfis físicos ideais para diferentes modalidades, maximizando as chances de sucesso de seus atletas em competições de alto nível.
+Por fim, a análise da relação entre altura e peso revela uma forte correlação de 0,8053, indicando que o aumento da altura geralmente se acompanha de um aumento proporcional de peso. Esse padrão é particularmente relevante em esportes como basquete, vôlei e natação, onde altura e massa corporal são frequentemente associadas a um desempenho superior. Em esportes de combate como judô, a variabilidade entre altura e peso é mais acentuada devido às categorias de peso, o que permite a participação de atletas com uma ampla gama de biotipos, ampliando as possibilidades de adaptação e estratégia dentro dessas modalidades.
